@@ -5,16 +5,16 @@
   tom jennings, tom@sr-ix.com
 
 
-  This code emuates the behavior of PIR Detector/Controllers like
+  This code emulates the behavior of PIR Detector/Controllers like
   ON Semi NCS36000 and others.
 
   HARDWARE REQUIREMENTS:
 
   Three-legged raw PIR sensor, with source-follower (open source, but not that/this kind!)
-  driving a 47K resistor to ground, and an op amp for gain. The signal is *just sufficient*
-  to drive a 3.3V ADC input if you generate a LARGE IR signal (your hand, slow, inches away).
-
-  A pair of opamps with total voltage gain A=1000 to 4000, eg. two A-60 in series.
+  driving a 47K resistor to ground, and an op amp for gain. Without the opamp, the signal 
+  is *just sufficient* to drive a 3.3V ADC input if you generate a LARGE IR signal (your hand, 
+  slow, inches away).  A pair of opamps with total voltage gain A=1000 to 4000, eg. 
+  two A=60 in series.
 
 
   This code called in a loop will return true when an event (defined below) is detected.
@@ -30,7 +30,7 @@
   bumps of opposite polarity. 
 
   The pulses are slow, many tens of milliseconds, befitting the physical motion
-  of a warm blooded mammal.
+  of a warm blooded mammal (a large bag of hot water will do).
 
   The sensor is somewhat noisy, producing a bi-polar signal impressed on DC. The signal is
   tens/hundreds of millivolts, and requires gain (eg. an op amp).
