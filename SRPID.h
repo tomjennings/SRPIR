@@ -13,6 +13,7 @@
 
   tom jennings <tom@SensitiveResearch.com>
   
+  23 sep 2020   Removed historic reference to arduino.h
   03 sep 2020   Oops: integFill() did not apply gain to seed value.
   25 aug 2020   all args are floats now, including loop time,
   		to accommodate long time constants.
@@ -60,8 +61,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #ifndef SR_SMPID
 #define SR_SMPID
-
-#include "Arduino.h"
 
 class SRSMPID {
 private:
