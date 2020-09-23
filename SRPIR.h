@@ -4,6 +4,7 @@
 
   tom jennings, tom@sr-ix.com
 
+  20 sep 2020  Missed storing pin number.
 
   This code emulates the behavior of PIR Detector/Controllers like
   ON Semi NCS36000 and others.
@@ -121,6 +122,10 @@ class SRPIR {
 
 private:
 
+#include <SRSmooth.h>
+#include <SRPID.h>
+#include <SRTimer.h>
+
 
 const float DEFAULTGAIN =           5.0;   // gain for PID (kludge: 3000 if no op amp)
 const unsigned long PIRHOLDOFF =  10000;   // wait for the integrators to settle, minimum, mS
@@ -165,6 +170,7 @@ public:
 void begin (int p) {
 int n;
 
+  pin= p;
   pinMode (pin, INPUT_PULLUP);
   T.begin (NUMTIMERS);
   T.setTimer (LOOPTIMER, LOOPTIME);          // minimize load
